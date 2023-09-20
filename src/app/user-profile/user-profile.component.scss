@@ -1,0 +1,43 @@
+.userProfile {
+  margin: 0 20px;
+  border: 1px solid gray;
+  width: fit-content;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+  overflow: hidden;
+  background-color: aliceblue;
+
+  h6 {
+    padding-top: 5px;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 30px;
+    padding: 0 5px;
+    margin-top: 15px;
+  }
+
+  h2,
+  h4,
+  h6,
+  input,
+  button {
+    margin-left: 10px;
+  }
+
+  button {
+    height: 25px;
+    margin-top: 10px;
+    width: 200px;
+    background-color: rgb(63, 15, 141);
+    border: none;
+    border-radius: 5px;
+    color: whitesmoke;
+  }
+}
