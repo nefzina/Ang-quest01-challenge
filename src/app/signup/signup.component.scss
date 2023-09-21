@@ -1,0 +1,35 @@
+
+
+form{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    
+    fieldset{
+        border: none;
+        label{
+
+            font-size: 1.2rem;
+        }
+    }
+
+    .error>span{
+        color: rgb(230, 96, 96);
+
+    }
+
+    button {
+        width: 100px;
+        height: 30px;
+        border-radius: 8px;
+        background-color: rgb(216, 220, 248);
+        margin: 20px 0;
+        border: none;
+        color: rgb(105, 97, 63);
+        transition: all 0.2s ease-in-out;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

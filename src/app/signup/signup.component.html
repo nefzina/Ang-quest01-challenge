@@ -1,1 +1,62 @@
-<p>signup works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css" integrity="sha512-t38vG/f94E72wz6pCsuuhcOPJlHKwPy+PY+n1+tJFzdte3hsIgYE7iEpgg/StngunGszVMrRfvwZinrza0vMTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label for="firstname">Firstname</label>
+    <input
+      type="text"
+      id="firstname"
+      name="firstname"
+      minlength="3"
+      maxlength="15"
+      [(ngModel)]="signupform.firstname"
+      #firstname="ngModel"
+      required
+    />
+  </fieldset>
+
+  <div *ngIf="firstname.errors && myForm.submitted" class="error">
+    <span *ngIf="firstname.errors?.['required']">firstname est obligatoire</span>
+    <span *ngIf="firstname.errors?.['minlength']">firstname doit comporter au moins 3 caractères</span>
+    <span *ngIf="firstname.errors?.['maxlength']">firstname ne doit pas dépasser 15 caractères</span>
+  </div>
+
+  <fieldset>
+    <label for="lastname">Lastname</label>
+    <input
+      type="text"
+      id="lastname"
+      name="lastname"
+      minlength="3"
+      maxlength="15"
+      [(ngModel)]="signupform.lastname"
+      #lastname="ngModel"
+      required
+    />
+  </fieldset>
+
+  <div *ngIf="lastname.errors && myForm.submitted" class="error">
+    <span *ngIf="lastname.errors?.['required']">Lastname est obligatoire</span>
+    <span *ngIf="lastname.errors?.['minlength']">Lastname doit comporter au moins 3 caractères</span>
+    <span *ngIf="lastname.errors?.['maxlength']">Lastname ne doit pas dépasser 15 caractères</span>
+  </div>
+
+  <fieldset>
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="signupform.email"
+      #email="ngModel"
+      required
+      email
+    />
+  </fieldset>
+
+  <div *ngIf="email.errors && myForm.submitted" class="error">
+    <span *ngIf="email.errors?.['required']">Email est obligatoire</span>
+    <span *ngIf="email.errors?.['email']">Email non valide</span>
+  </div>
+
+  <button type="submit">Sign up</button>
+</form>
